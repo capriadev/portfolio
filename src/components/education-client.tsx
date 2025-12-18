@@ -1,5 +1,3 @@
-"use client"
-
 import { useState } from "react"
 import { useLocale } from "@/lib/locale-context"
 import { Card } from "./ui/card"
