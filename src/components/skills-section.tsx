@@ -1,7 +1,4 @@
-"use client"
-
 import type React from "react"
-
 import { useLocale } from "@/lib/locale-context"
 import { skillsData } from "@/lib/skills-data"
 import { Card } from "./ui/card"
