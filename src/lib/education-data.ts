@@ -17,7 +17,7 @@ export interface Education {
 export const educationData: Education[] = [
   {
     id: "sfc",
-    title: "Scrum Fundamentals Certified",
+    title: "Scrum Fundamentals Certified (SFC)",
     titleEn: "Scrum Fundamentals Certified (SFC)",
     institution: "SCRUMstudy",
     institutionEn: "SCRUMstudy",
@@ -33,7 +33,7 @@ export const educationData: Education[] = [
   {
     id: "kec",
     title: "Kanban Essentials with AI Certified (KEC)",
-    titleEn: "Kanban Essentials with AI Certified",
+    titleEn: "Kanban Essentials with AI Certified (KEC)",
     institution: "SCRUMstudy",
     institutionEn: "SCRUMstudy",
     year: "2025",
