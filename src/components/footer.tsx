@@ -1,5 +1,3 @@
-"use client"
-
 import { useLocale } from "@/lib/locale-context"
 import { Github, Linkedin, Mail } from "lucide-react"
 import { SiDiscord } from "@icons-pack/react-simple-icons"
