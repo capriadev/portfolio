@@ -8,27 +8,27 @@ export const skillsData: SkillCategory[] = [
   {
     titleEs: "Lenguajes",
     titleEn: "Languages",
-    skills: ["JavaScript", "TypeScript", "Python", "HTML", "CSS", "SQL"],
+    skills: ["TypeScript", "JavaScript", "Python", "HTML5", "CSS2", "SASS", "LESS", "SQL", "PHP", "Markdown", "Json", "YALM"],
   },
   {
     titleEs: "Frontend",
     titleEn: "Frontend",
-    skills: ["React", "Next.js", "Vue", "Tailwind CSS", "Framer Motion", "Three.js"],
+    skills: ["React", "Next.js", "Vite", "Tailwind CSS", "Framer Motion", "Three.js"],
   },
   {
     titleEs: "Backend / APIs",
     titleEn: "Backend / APIs",
-    skills: ["Node.js", "Express", "FastAPI", "REST", "GraphQL", "WebSockets"],
+    skills: ["Node.js", "Express", "WebSockets"],
   },
   {
     titleEs: "Bases de datos",
     titleEn: "Databases",
-    skills: ["PostgreSQL", "MongoDB", "Redis", "Supabase", "Prisma"],
+    skills: ["PostgreSQL", "MongoDB", "Supabase", "Firebase", "Koyeb", "InfinityFree"],
   },
   {
     titleEs: "DevOps",
     titleEn: "DevOps",
-    skills: ["Docker", "Vercel", "GitHub Actions", "AWS", "Nginx"],
+    skills: ["Docker", "Vercel", "GitHub Actions", "Jest"],
   },
   {
     titleEs: "Diseño",
@@ -38,6 +38,6 @@ export const skillsData: SkillCategory[] = [
   {
     titleEs: "Herramientas",
     titleEn: "Tools",
-    skills: ["Git", "VS Code", "Postman", "Jira", "Linear", "Notion"],
+    skills: ["Git", "VS Code", "Cursor", "Notion"],
   },
 ]
