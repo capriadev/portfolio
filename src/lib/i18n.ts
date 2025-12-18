@@ -16,11 +16,16 @@ export const translations = {
       10: "Noviembre",
       11: "Diciembre",
     },
-    level: {
+    level_education: {
+      0: "Secundario",
+      1: "Terciario",
+      3: "Universidad"
+    },
+    level_difficulty: {
       0: "Básico",
       1: "Intermedio",
       2: "Avanzado",
-      3: "Experto",
+      3: "Experto"
     },
     type_education: {
       0: "Título",
@@ -161,11 +166,16 @@ export const translations = {
       10: "November",
       11: "December",
     },
-    level: {
+    level_education: {
+      0: "Secondary",
+      1: "Tertiary",
+      2: "University",
+    },
+    level_difficulty: {
       0: "Beginner",
       1: "Intermediate",
       2: "Advanced",
-      3: "Expert",
+      3: "Expert"
     },
     type_education: {
       0: "Degree",
