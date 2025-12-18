@@ -15,6 +15,7 @@ export interface Education {
   dia?: number
   institutionFull?: string
   nivel?: number
+  education?: number
 }
 
 export const educationData: Education[] = [
