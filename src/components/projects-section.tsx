@@ -1,5 +1,3 @@
-"use client"
-
 import { useState, useMemo } from "react"
 import { useLocale } from "@/lib/locale-context"
 import { ProjectFilters } from "./project-filters"
