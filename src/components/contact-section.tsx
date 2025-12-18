@@ -1,5 +1,3 @@
-"use client"
-
 import { useLocale } from "@/lib/locale-context"
 import { Card } from "./ui/card"
 import { Button } from "./ui/button"
