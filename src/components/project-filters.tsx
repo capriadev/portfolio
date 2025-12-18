@@ -1,5 +1,3 @@
-"use client"
-
 import { useLocale } from "@/lib/locale-context"
 import { motion } from "framer-motion"
 import type { ProjectType } from "@/lib/projects-data"
