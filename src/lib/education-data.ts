@@ -20,6 +20,19 @@ export interface Education {
 
 export const educationData: Education[] = [
   {
+    id: "eestn2-temperley",
+    title: "Técnico en Programación",
+    titleEn: "Technical Degree in Programming",
+    institution: "E.E.S.T N°2, Temperley",
+    institutionFull: "Escuela de Educación Secundaria Técnica N°2 Temperley",
+    year: "2022-2026",
+    type: 1,
+    description: "Formación secundaria técnica con orientación en programación, enfocada en fundamentos de informática, lógica y desarrollo de software.",
+    descriptionEn: "Technical secondary education with a focus on programming, emphasizing computer science fundamentals, logic, and software development.",
+    featured: true,
+    education: 0
+  },
+  {
     id: "sfc",
     title: "Scrum Fundamentals Certified (SFC)",
     titleEn: "Scrum Fundamentals Certified (SFC)",
