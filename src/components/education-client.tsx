@@ -12,30 +12,41 @@ import { navigateBack, getQueryParam } from "@/lib/router-utils"
 
 export function EducationClient() {
   const { locale, t } = useLocale()
-  const [filter, setFilter] = useState<"all" | "degree" | "certification" | "course">("all")
+  const [filter, setFilter] = useState<"all" | 0 | 1 | 2>("all")
   const fromParam = getQueryParam("from")
 
   const filteredEducation = filter === "all" ? educationData : educationData.filter((item) => item.type === filter)
 
-  const getIcon = (type: string) => {
+  const getIcon = (type: number) => {
     switch (type) {
-      case "degree":
+      case 0:
         return GraduationCap
-      case "certification":
+      case 1:
         return Award
-      case "course":
+      case 2:
         return BookOpen
       default:
         return GraduationCap
     }
   }
 
-  const getTypeLabel = (type: string) => {
-    const labels = {
-      es: { degree: "Título", certification: "Certificación", course: "Curso" },
-      en: { degree: "Degree", certification: "Certification", course: "Course" },
+  const getTypeLabel = (type: number) => {
+    return t.type_education[type as keyof typeof t.type_education] || ""
+  }
+
+  const formatDate = (year: string, mes?: number, dia?: number): string => {
+    if (mes === undefined || dia === undefined) {
+      return year
     }
-    return labels[locale][type as keyof typeof labels.es] || type
+
+    const monthName = t.months[mes as keyof typeof t.months]
+
+    if (locale === "es") {
+      return `${dia} de ${monthName}, ${year}`
+    } else {
+      // English format: "Month Day, Year"
+      return `${monthName} ${dia}, ${year}`
+    }
   }
 
   const handleBackClick = () => {
@@ -79,14 +90,14 @@ export function EducationClient() {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="mb-8 flex flex-wrap justify-center gap-3"
             >
-              {["all", "degree", "certification", "course"].map((type) => (
+              {["all", 0, 1, 2].map((type) => (
                 <Button
                   key={type}
                   variant={filter === type ? "default" : "outline"}
                   onClick={() => setFilter(type as typeof filter)}
                   className="capitalize"
                 >
-                  {type === "all" ? (locale === "es" ? "Todos" : "All") : getTypeLabel(type)}
+                  {type === "all" ? (locale === "es" ? "Todos" : "All") : getTypeLabel(type as number)}
                 </Button>
               ))}
             </motion.div>
@@ -96,8 +107,9 @@ export function EducationClient() {
               {filteredEducation.map((item, index) => {
                 const Icon = getIcon(item.type)
                 const title = locale === "es" ? item.title : item.titleEn
-                const institution = locale === "es" ? item.institution : item.institutionEn
+                const institution = locale === "es" ? item.institution : item.institution
                 const description = locale === "es" ? item.description : item.descriptionEn
+                const institutionDisplay = item.institutionFull || institution
 
                 return (
                   <motion.div
@@ -106,11 +118,11 @@ export function EducationClient() {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5, delay: index * 0.1 }}
                   >
-                    <Card className="relative h-full border-border/50 bg-card/50 p-6 backdrop-blur-sm">
+                    <Card className="relative flex flex-col h-full border-border/50 bg-card/50 p-6 backdrop-blur-sm">
                       
 
-                      <div className="mb-2 flex items-start justify-between">
-                        <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10">
+                      <div className="mb-1 flex items-start justify-between">
+                        <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-lg bg-primary/10">
                           <Icon className="h-6 w-6 text-primary" />
                         </div>
 
@@ -127,13 +139,34 @@ export function EducationClient() {
                         </div>
                       </div>
 
-                      <h3 className="mb-2 text-xl font-semibold">{title}</h3>
-                      <p className="mb-1 text-sm text-muted-foreground">{institution}</p>
-                      <p className="mb-3 text-xs text-primary">{item.year}</p>
-                      <p className="mb-4 text-sm text-muted-foreground">{description}</p>
+                      <h3 className="mb-[-.5rem] text-lg font-semibold line-clamp-2">
+                        {title}
+                      </h3>
+
+                      <div className="mb-1 line-clamp-1">
+                        {item.institutionFull ? (
+                          <abbr title={institutionDisplay} className="cursor-help border-b border-dotted border-muted-foreground/40 text-sm text-muted-foreground no-underline hover:border-muted-foreground/70">
+                            {institution}
+                          </abbr>
+                        ) : (
+                          <p className="text-sm text-muted-foreground">
+                            {institution}
+                          </p>
+                        )}
+                      </div>
+
+                      <p className="mb-2 text-xs text-primary">
+                        {formatDate(item.year, item.mes, item.dia)}
+                      </p>
+
+                      <div className="mb-4 flex-grow">
+                        <p title={description} className="text-sm text-muted-foreground line-clamp-4 overflow-hidden">
+                          {description}
+                        </p>
+                      </div>
 
                       {/* Enlaces y validación */}
-                      <div className="flex flex-wrap gap-2">
+                      <div className="flex flex-wrap gap-2 mt-auto">
                         {item.pdfUrl && (
                           <Button size="sm" variant="outline" className="gap-2 bg-transparent" asChild>
                             <a href={item.pdfUrl} target="_blank" rel="noopener noreferrer">
