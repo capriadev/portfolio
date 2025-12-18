@@ -4,7 +4,7 @@ export interface Education {
   titleEn: string
   institution: string
   year: string
-  type: "degree" | "certification" | "course"
+  type: number
   description: string
   descriptionEn: string
   pdfUrl?: string
