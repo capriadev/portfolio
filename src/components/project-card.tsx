@@ -34,7 +34,7 @@ export function ProjectCard({ project, index, from = "home" }: ProjectCardProps)
       >
         <div className="relative aspect-video overflow-hidden">
           <img
-            src={project.preview || "/placeholder.svg"}
+            src={project.preview || "/images/errors/sin-preview.svg"}
             alt={name}
             className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[102.5%]"
           />

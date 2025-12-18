@@ -64,7 +64,7 @@ export const projects: Project[] = [
     description: "Plataforma completa de comercio electrónico con gestión de productos, carrito y pagos",
     descriptionEn: "Complete e-commerce platform with product management, cart and payments",
     stack: ["React", "TypeScript", "Next.js", "Stripe", "Tailwind CSS"],
-    preview: "/test/test-img.png",
+    preview: "/test/img2.png",
     github: "https://github.com",
     live: "https://demo.com",
     featured: true,
@@ -114,7 +114,7 @@ export const projects: Project[] = [
     description: "API RESTful para gestión de proyectos y tareas con autenticación JWT",
     descriptionEn: "RESTful API for project and task management with JWT authentication",
     stack: ["Node.js", "Express", "PostgreSQL", "JWT"],
-    preview: "/test/img2.png",
+    preview: "",
     github: "https://github.com",
     featured: true,
     showInHome: true, // Mostrar en página principal
@@ -172,7 +172,7 @@ export const projects: Project[] = [
     description: "Bot avanzado para moderación automática y gestión de comunidades",
     descriptionEn: "Advanced bot for automatic moderation and community management",
     stack: ["Discord.js", "TypeScript", "MongoDB"],
-    preview: "/images/projects/bots/discord-moderation-bot/preview.webp",
+    preview: "",
     github: "https://github.com",
     showInHome: true, // Mostrar en página principal
     details: {
@@ -213,7 +213,7 @@ export const projects: Project[] = [
     description: "Tema oscuro para Visual Studio Code enfocado en productividad",
     descriptionEn: "Dark theme for Visual Studio Code focused on productivity",
     stack: ["JSON", "VSCode Extensions"],
-    preview: "/images/projects/tools/vscode-theme/preview.webp",
+    preview: "",
     live: "https://marketplace.visualstudio.com",
     featured: true,
     showInHome: true, // Mostrar en página principal
@@ -261,7 +261,7 @@ export const projects: Project[] = [
     description: "Herramienta para crear portfolios profesionales de forma rápida",
     descriptionEn: "Tool to create professional portfolios quickly",
     stack: ["React", "Next.js", "Tailwind CSS", "Framer Motion"],
-    preview: "/images/projects/webs/portfolio-generator/preview.webp",
+    preview: "",
     github: "https://github.com",
     live: "https://demo.com",
     showInHome: true, // Mostrar en página principal
@@ -298,7 +298,7 @@ export const projects: Project[] = [
     description: "API de pronóstico del tiempo con datos en tiempo real",
     descriptionEn: "Weather forecast API with real-time data",
     stack: ["Python", "FastAPI", "Redis", "Docker"],
-    preview: "/images/projects/apis/weather-api/preview.webp",
+    preview: "",
     github: "https://github.com",
     showInHome: true, // Mostrar en página principal
     details: {
