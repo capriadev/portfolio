@@ -84,7 +84,6 @@ export function AboutSection() {
             <div className="grid gap-4 md:grid-cols-2">
               {featuredEducation.map((item, index) => {
                 const title = locale === "es" ? item.title : item.titleEn
-                const institution = locale === "es" ? item.institution : item.institutionEn
                 return (
                   <motion.div
                     key={item.id}
@@ -98,7 +97,7 @@ export function AboutSection() {
                       <h4 className="font-semibold">{title}</h4>
                       <span className="rounded-full bg-primary/10 px-2 py-1 text-xs text-primary">{item.year}</span>
                     </div>
-                    <p className="text-sm text-muted-foreground">{institution}</p>
+                    <p className="text-sm text-muted-foreground">{item.institution}</p>
                   </motion.div>
                 )
               })}
