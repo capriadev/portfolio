@@ -44,7 +44,21 @@ export const educationData: Education[] = [
     validationId: "1133114",
     validationUrl: "https://www.scrumstudy.com/certification/verify?type=KEC&number=1133114",
     featured: true
+  },
+  {
+    id: "testing-cfl403",
+    title: "Testing de Aplicaciones",
+    titleEn: "Application Testing",
+    institution: "CFL N°403 Luz y Fuerza",
+    institutionEn: "CFL N°403 Luz y Fuerza",
+    year: "2025",
+    type: "course",
+    description: "Curso práctico de testing de aplicaciones. Pruebas manuales en sitios web y formularios, redacción de manuales de usuario, validación de funcionamiento y rendimiento, y fundamentos teóricos del testing.",
+    descriptionEn: "Hands-on application testing course. Manual testing of websites and forms, user manual writing, functionality and performance validation, and testing fundamentals.",
+    pdfUrl: "/pdfs/TestingDeAplicaciones-FrancoCapria-CFL403LyF.pdf",
+    featured: true
   }
+
 ]
 
 export function getFeaturedEducation(): Education[] {
