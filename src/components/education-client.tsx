@@ -5,7 +5,7 @@ import { Button } from "./ui/button"
 import { motion } from "framer-motion"
 import { Navigation } from "./navigation"
 import { educationData } from "@/lib/education-data"
-import { GraduationCap, Award, BookOpen, FileText, CheckCircle, ArrowLeft } from "lucide-react"
+import { GraduationCap, Award, BookOpen, FileText, CheckCircle, ArrowLeft , Sparkles } from "lucide-react"
 import { navigateBack, getQueryParam } from "@/lib/router-utils"
 
 export function EducationClient() {
@@ -30,6 +30,16 @@ export function EducationClient() {
 
   const getTypeLabel = (type: number) => {
     return t.type_education[type as keyof typeof t.type_education] || ""
+  }
+
+  const getEducationLabel = (education?: number) => {
+    if (education === undefined) return null
+    return t.level_education?.[education as keyof typeof t.level_education] || null
+  }
+
+  const getDifficultyLabel = (nivel?: number) => {
+    if (nivel === undefined) return null
+    return t.level_difficulty?.[nivel as keyof typeof t.level_difficulty] || null
   }
 
   const formatDate = (year: string, mes?: number, dia?: number): string => {
@@ -108,6 +118,7 @@ export function EducationClient() {
                 const institution = locale === "es" ? item.institution : item.institution
                 const description = locale === "es" ? item.description : item.descriptionEn
                 const institutionDisplay = item.institutionFull || institution
+                const both = getEducationLabel(item.education) !== null && getDifficultyLabel(item.nivel) !== null
 
                 return (
                   <motion.div
@@ -119,21 +130,36 @@ export function EducationClient() {
                     <Card className="relative flex flex-col h-full border-border/50 bg-card/50 p-6 backdrop-blur-sm">
                       
 
-                      <div className="mb-1 flex items-start justify-between">
-                        <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-lg bg-primary/10">
-                          <Icon className="h-6 w-6 text-primary" />
+                      <div className="mb-3 flex items-start justify-between">
+                        <div className="flex gap-2">
+                          <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-lg bg-primary/10">
+                            <Icon className="h-6 w-6 text-primary" />
+                          </div>
+                          {item.featured && (
+                            <abbr title={t.education.featured}>
+                              <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-lg bg-primary/30">
+                                <Sparkles className="h-6 w-6 text-chart-3" />
+                              </div>
+                            </abbr>
+                          )}
                         </div>
 
-                        <div className="flex flex-col gap-2">
-                          {item.featured && (
-                            <span className="rounded-full bg-primary/90 w-[7rem] px-3 py-1 text-xs font-medium capitalize text-primary-foreground">
-                              {t.education.featured}
+                        <div className={`grid gap-2 ${both ? "grid-cols-2" : "grid-cols-1"}`}>
+                          {getEducationLabel(item.education) && (
+                            <span className="rounded-full bg-secondary w-[7rem] px-3 py-1 text-xs font-medium capitalize text-secondary-foreground">
+                              {getEducationLabel(item.education)}
                             </span>
                           )}
 
                           <span className="rounded-full bg-secondary w-[7rem] px-3 py-1 text-xs font-medium capitalize text-secondary-foreground">
                             {getTypeLabel(item.type)}
                           </span>
+
+                          {getDifficultyLabel(item.nivel) && (
+                            <span className={`${both && "col-start-2 justify-self-end"} rounded-full bg-secondary w-[7rem] px-3 py-1 text-xs font-medium capitalize text-secondary-foreground`}>
+                              {getDifficultyLabel(item.nivel)}
+                            </span>
+                          )}
                         </div>
                       </div>
 

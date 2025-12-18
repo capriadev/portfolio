@@ -19,18 +19,19 @@ export const translations = {
     level_education: {
       0: "Secundario",
       1: "Terciario",
-      3: "Universidad"
+      3: "Universidad",
     },
     level_difficulty: {
       0: "Básico",
       1: "Intermedio",
       2: "Avanzado",
-      3: "Experto"
+      3: "Experto",
     },
     type_education: {
       0: "Título",
-      1: "Certificación",
-      2: "Curso",
+      1: "Curso",
+      2: "Certificación",
+      3: "Certificado acreditado"
     },
     nav: {
       projects: "Proyectos",
@@ -175,12 +176,13 @@ export const translations = {
       0: "Beginner",
       1: "Intermediate",
       2: "Advanced",
-      3: "Expert"
+      3: "Expert",
     },
     type_education: {
       0: "Degree",
-      1: "Certification",
-      2: "Course",
+      1: "Course",
+      2: "Certification",
+      3: "Accredited Certificate",
     },
     nav: {
       projects: "Projects",

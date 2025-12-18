@@ -30,7 +30,8 @@ export const educationData: Education[] = [
     description: "Formación secundaria técnica con orientación en programación, enfocada en fundamentos de informática, lógica y desarrollo de software.",
     descriptionEn: "Technical secondary education with a focus on programming, emphasizing computer science fundamentals, logic, and software development.",
     featured: true,
-    education: 0
+    education: 0,
+    nivel: 1,
   },
   {
     id: "sfc",
