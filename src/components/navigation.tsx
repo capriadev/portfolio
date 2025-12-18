@@ -1,5 +1,3 @@
-"use client"
-
 import { useLocale } from "@/lib/locale-context"
 import { LanguageSwitcher } from "./language-switcher"
 import { motion } from "framer-motion"
