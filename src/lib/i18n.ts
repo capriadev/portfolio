@@ -2,6 +2,26 @@ export type Locale = "es" | "en"
 
 export const translations = {
   es: {
+    months: {
+      0: "Enero",
+      1: "Febrero",
+      2: "Marzo",
+      3: "Abril",
+      4: "Mayo",
+      5: "Junio",
+      6: "Julio",
+      7: "Agosto",
+      8: "Septiembre",
+      9: "Octubre",
+      10: "Noviembre",
+      11: "Diciembre",
+    },
+    level: {
+      0: "Básico",
+      1: "Intermedio",
+      2: "Avanzado",
+      3: "Experto",
+    },
     nav: {
       projects: "Proyectos",
       skills: "Habilidades",
@@ -122,6 +142,26 @@ export const translations = {
     },
   },
   en: {
+    months: {
+      0: "January",
+      1: "February",
+      2: "March",
+      3: "April",
+      4: "May",
+      5: "June",
+      6: "July",
+      7: "August",
+      8: "September",
+      9: "October",
+      10: "November",
+      11: "December",
+    },
+    level: {
+      0: "Beginner",
+      1: "Intermediate",
+      2: "Advanced",
+      3: "Expert",
+    },
     nav: {
       projects: "Projects",
       skills: "Skills",
