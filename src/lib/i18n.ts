@@ -19,7 +19,7 @@ export const translations = {
     level_education: {
       0: "Secundario",
       1: "Terciario",
-      3: "Universidad",
+      2: "Universidad",
     },
     level_difficulty: {
       0: "Básico",

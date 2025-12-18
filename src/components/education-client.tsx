@@ -118,7 +118,7 @@ export function EducationClient() {
                 const institution = locale === "es" ? item.institution : item.institution
                 const description = locale === "es" ? item.description : item.descriptionEn
                 const institutionDisplay = item.institutionFull || institution
-                const both = getEducationLabel(item.education) !== null && getDifficultyLabel(item.nivel) !== null
+                const both = getEducationLabel(item.education) !== null && getDifficultyLabel(item.nivel) == null
 
                 return (
                   <motion.div
@@ -144,19 +144,20 @@ export function EducationClient() {
                           )}
                         </div>
 
-                        <div className={`grid gap-2 ${both ? "grid-cols-2" : "grid-cols-1"}`}>
-                          {getEducationLabel(item.education) && (
-                            <span className="rounded-full bg-secondary w-[7rem] px-3 py-1 text-xs font-medium capitalize text-secondary-foreground">
-                              {getEducationLabel(item.education)}
+                        <div className="flex flex-col gap-2 items-end">
+                          <div className={`flex gap-2 ${both ? "flex-col" : "flex-row"} items-end`}>
+                            {getEducationLabel(item.education) && (
+                              <span className="rounded-full bg-secondary w-fit px-3 py-1 text-xs font-medium capitalize text-secondary-foreground">
+                                {getEducationLabel(item.education)}
+                              </span>
+                            )}
+
+                            <span className="rounded-full bg-secondary w-fit px-3 py-1 text-xs font-medium capitalize text-secondary-foreground">
+                              {getTypeLabel(item.type)}
                             </span>
-                          )}
-
-                          <span className="rounded-full bg-secondary w-[7rem] px-3 py-1 text-xs font-medium capitalize text-secondary-foreground">
-                            {getTypeLabel(item.type)}
-                          </span>
-
+                          </div>
                           {getDifficultyLabel(item.nivel) && (
-                            <span className={`${both && "col-start-2 justify-self-end"} rounded-full bg-secondary w-[7rem] px-3 py-1 text-xs font-medium capitalize text-secondary-foreground`}>
+                            <span className="rounded-full bg-secondary w-fit px-3 py-1 text-xs font-medium capitalize text-secondary-foreground">
                               {getDifficultyLabel(item.nivel)}
                             </span>
                           )}
