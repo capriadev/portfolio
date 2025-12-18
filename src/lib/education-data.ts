@@ -30,6 +30,21 @@ export const educationData: Education[] = [
     validationUrl: "https://www.scrumstudy.com/certification/verify?type=SFC&number=1124214",
     featured: true
   },
+  {
+    id: "kec",
+    title: "Kanban Essentials with AI Certified",
+    titleEn: "Kanban Essentials with AI Certified",
+    institution: "SCRUMstudy",
+    institutionEn: "SCRUMstudy",
+    year: "2025",
+    type: "certification",
+    description: "Principios de Kanban aplicados a flujos de trabajo modernos y uso de IA para optimización.",
+    descriptionEn: "Kanban principles applied to modern workflows and AI usage for optimization.",
+    pdfUrl: "/pdfs/KanbanEssentialswithAICertified-FrancoCapria-1133114.pdf",
+    validationId: "1133114",
+    validationUrl: "https://www.scrumstudy.com/certification/verify?type=KEC&number=1133114",
+    featured: true
+  }
 ]
 
 export function getFeaturedEducation(): Education[] {
