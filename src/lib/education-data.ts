@@ -15,7 +15,21 @@ export interface Education {
 }
 
 export const educationData: Education[] = [
-  
+  {
+    id: "sfc",
+    title: "Scrum Fundamentals Certified",
+    titleEn: "Scrum Fundamentals Certified",
+    institution: "SCRUMstudy",
+    institutionEn: "SCRUMstudy",
+    year: "2025",
+    type: "certification",
+    description: "Fundamentos de Scrum: roles, eventos y artefactos. Enfoque en trabajo ágil y colaborativo.",
+    descriptionEn: "Scrum fundamentals: roles, events, and artifacts. Focused on agile and collaborative work.",
+    pdfUrl: "/pdfs/ScrumFundamentalsCertified-FrancoCapria-1124214.pdf",
+    validationId: "1124214",
+    validationUrl: "https://www.scrumstudy.com/certification/verify?type=SFC&number=1124214",
+    featured: true
+  },
 ]
 
 export function getFeaturedEducation(): Education[] {
