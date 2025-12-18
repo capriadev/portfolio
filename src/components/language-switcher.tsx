@@ -1,5 +1,3 @@
-"use client"
-
 import { useLocale } from "@/lib/locale-context"
 import { Button } from "@/components/ui/button"
 import { motion } from "framer-motion"
