@@ -22,6 +22,11 @@ export const translations = {
       2: "Avanzado",
       3: "Experto",
     },
+    type_education: {
+      0: "Título",
+      1: "Certificación",
+      2: "Curso",
+    },
     nav: {
       projects: "Proyectos",
       skills: "Habilidades",
@@ -161,6 +166,11 @@ export const translations = {
       1: "Intermediate",
       2: "Advanced",
       3: "Expert",
+    },
+    type_education: {
+      0: "Degree",
+      1: "Certification",
+      2: "Course",
     },
     nav: {
       projects: "Projects",
